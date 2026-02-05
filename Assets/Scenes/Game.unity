@@ -967,7 +967,7 @@ Transform:
   m_GameObject: {fileID: 622196288}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3256955, y: -25.756802, z: 35.65279}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1074,7 +1074,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc3016555b34044d97a649944b64141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabList: []
+  spriteList:
+  - {fileID: 21300000, guid: 2c295a851a439654198e4483fc0573b9, type: 3}
+  - {fileID: 21300000, guid: ca22d160b5a2e594b98880852fca0f05, type: 3}
+  - {fileID: 21300000, guid: ffcc9699b4b0ccf43bb0cabbf6432099, type: 3}
+  - {fileID: 21300000, guid: eb3f95dee7485d0479017e64b0eef758, type: 3}
+  - {fileID: 21300000, guid: 8b57ef248910a0b41bcef63e9dd42f7a, type: 3}
+  prefabList:
+  - {fileID: 8179548443174730068, guid: 027537e2cee17604ca3b55a6411bf557, type: 3}
+  - {fileID: 8179548443174730068, guid: 0b7f6251f0ac45a45911e183432d07c5, type: 3}
+  - {fileID: 8179548443174730068, guid: f7d83a834b3a06c4d8e220498ef21ef5, type: 3}
 --- !u!4 &964598399
 Transform:
   m_ObjectHideFlags: 0
@@ -1084,7 +1093,7 @@ Transform:
   m_GameObject: {fileID: 964598397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 565.06836, y: 661.1941, z: 11.738647}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1103,7 +1112,7 @@ GameObject:
   - component: {fileID: 1039173248}
   - component: {fileID: 1039173247}
   m_Layer: 5
-  m_Name: Btn_Planos
+  m_Name: Btn_Planes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,7 +1181,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1039173248}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 964598398}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnPlaneButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1039173248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,7 +1397,7 @@ Transform:
   m_GameObject: {fileID: 1142592577}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 211.45421, y: 66.21266, z: -27.929548}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1393,6 +1414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1230234170}
   - component: {fileID: 1230234169}
+  - component: {fileID: 1230234171}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1480,6 +1502,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1230234171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230234168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1324836830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,7 +1637,7 @@ Transform:
   m_GameObject: {fileID: 1368415533}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 211.45421, y: 66.21266, z: -27.929548}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1700,8 +1745,8 @@ RectTransform:
   - {fileID: 1773655530}
   - {fileID: 119181034}
   - {fileID: 312453216}
-  - {fileID: 1039173246}
   - {fileID: 1495579431}
+  - {fileID: 1039173246}
   - {fileID: 1523354424}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1792,7 +1837,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1495579433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 964598398}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnPrefabButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1495579433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1913,7 +1970,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1523354426}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 964598398}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnResetButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1523354426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,7 +2358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 8b57ef248910a0b41bcef63e9dd42f7a, type: 3}
+  m_Texture: {fileID: 2800000, guid: eb3f95dee7485d0479017e64b0eef758, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
