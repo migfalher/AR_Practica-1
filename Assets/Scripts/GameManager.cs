@@ -14,6 +14,7 @@ using UnityEngine.XR.ARSubsystems;
 public class GameManager : MonoBehaviour
 {
     // components
+    public float magnitude;
     public List<Sprite> spriteList;
     public List<GameObject> prefabList;
 
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        foreach (GameObject prefab in prefabList) { prefab.transform.localScale = new Vector3(magnitude, magnitude, magnitude); }
+
         touchCount = 0;
         prefabIndex = 0;
         planeCount = 0;
@@ -64,7 +67,7 @@ public class GameManager : MonoBehaviour
         fingerTMP.text = Input.touchCount.ToString();
         gestureTMP.text = "";
         instanceTMP.text = instanceList.Count.ToString();
-        planeTMP.text = "0";
+        planeTMP.text = planeManager.trackables.count.ToString();
     }
 
     // Update is called once per frame
@@ -101,6 +104,15 @@ public class GameManager : MonoBehaviour
             }
             gestureTMP.text = phaseName;
         }
+
+        planeCount = 0;
+
+        foreach (ARPlane arp in planeManager.trackables)
+        {
+            if (arp.gameObject.activeSelf) { planeCount++; }
+        }
+
+        planeTMP.text = planeCount.ToString();
     }
 
     // actions
@@ -134,23 +146,15 @@ public class GameManager : MonoBehaviour
 
     private void togglePlaneDetection()
     {
-        if (planeDetectionActivated)
+        planeManager.enabled = !planeManager.enabled;
+
+        if (planeManager.enabled == false)
         {
-            planeManager.requestedDetectionMode = UnityEngine.XR.ARSubsystems.PlaneDetectionMode.None;
-            GameObject trackables = GameObject.Find("Trackables");
-            foreach (GameObject go in trackables.transform)
-            {
-                Debug.Log(go.name);
-            }
-        }
-        else
-        {
-            planeManager.requestedDetectionMode = UnityEngine.XR.ARSubsystems.PlaneDetectionMode.Horizontal;
+            resetInstances();
+            foreach (ARPlane arp in planeManager.trackables) { arp.gameObject.SetActive(false); }
         }
 
-        planeDetectionActivated = !planeDetectionActivated;
-
-        planeBtnImage.texture = (planeDetectionActivated) ? spriteList[3].texture : spriteList[4].texture ;
+        planeBtnImage.texture = (planeManager.enabled == true) ? spriteList[3].texture : spriteList[4].texture;
     }
 
     private void resetInstances()
